@@ -10,15 +10,19 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header-left">
-        <h1><a href="/">Mency</a></h1>
-      </div>
-      <div class="header-right">
-        <%= link_to "ログイン", new_user_session_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
+
+    <header>
+      <div class="container header">
+        <div class="header-left">
+          <h1><a href="/">Mency</a></h1>
+        </div>
+        <div class="header-right">
+          <%= link_to "ログイン", new_user_session_path, class: "signin" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "signup" %>
+        </div>
       </div>
     </header>
+
     <%= yield %>
   </body>
 </html>
