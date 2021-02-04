@@ -14,6 +14,13 @@
  *= require_self
  */
 
+:root {
+  --base-color: #fff;
+  --main-color1: #000;
+  --main-color2: #626262;
+  --accent-color: #76bfff;
+}
+
 a {
   text-decoration: none;
 }
@@ -26,6 +33,7 @@ input {
 
 .container {
   max-width: 1200px;
-  padding: 0 30px;
+  padding: 0 10px;
   margin: 0 auto;
 }
+
