@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--main-color2);
 }
 
 .header {
@@ -36,7 +36,7 @@ header {
 .btn {
   background: var(--accent-color);
   color: var(--base-color);
-  padding: 10px 18px;
+  padding: 8px 18px;
   border-radius: 3px;
 }
 
