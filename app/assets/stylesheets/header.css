@@ -14,6 +14,11 @@ header {
   color: var(--main-color1);
 }
 
+.nickname {
+  color: var(--main-color2);
+  margin-right: 20px;
+}
+
 .btn {
   background: var(--accent-color);
   color: var(--base-color);
@@ -21,6 +26,6 @@ header {
   border-radius: 3px;
 }
 
-.signup, .logout {
+.signup {
   margin-left: 10px;
 }
