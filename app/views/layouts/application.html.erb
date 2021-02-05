@@ -18,7 +18,14 @@
         </div>
         <div class="header-right">
           <% if user_signed_in? %>
-            <%= link_to current_user.nickname, "#", class: "nickname" %>
+            <%= link_to root_path, class: "current-user" do %>
+              <% if current_user.image.blank? %>
+                <%= image_tag "default_user_image.png", alt: "user icon", class: "current-user-image" %>
+              <% else %>
+                <%= image_tag current_user.image, alt: "user icon", class: "current-user-image" %>
+              <% end %>
+              <span><%= current_user.nickname %></span>
+            <% end %>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: ["logout", "btn"] %>
           <% else %>
             <%= link_to "ログイン", new_user_session_path, class: ["signin", "btn"] %>

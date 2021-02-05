@@ -14,9 +14,23 @@ header {
   color: var(--main-color1);
 }
 
-.nickname {
+.header-right {
+  display: flex;
+}
+
+.current-user {
   color: var(--main-color2);
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.current-user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 5px;
 }
 
 .btn {
