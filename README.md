@@ -40,6 +40,7 @@ Mency
 | age_id             | integer |                          |
 | skin_quality_id    | integer |                          |
 | introduction       | text    |                          |
+| image              | string  |                          |
 
 ### Association
 - has_many :reviews
