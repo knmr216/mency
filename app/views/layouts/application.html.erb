@@ -12,29 +12,38 @@
   <body>
 
     <header>
-      <div class="container header">
-        <div class="header-left">
-          <h1><a href="/" class="title">Mency</a></h1>
-        </div>
-        <div class="header-right">
-          <% if user_signed_in? %>
-            <%= link_to root_path, class: "current-user" do %>
-              <% if current_user.image.blank? %>
-                <%= image_tag "default_user_image.png", alt: "user icon", class: "current-user-image" %>
+      <div class="container">
+        <div class="header">
+          <h1>
+            <%= link_to image_tag("title.png", alt: "Mency", class: "title-img"), root_path %>
+          </h1>
+          <nav>
+            <ul class="header-lists">
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to root_path, class: "current-user" do %>
+                    <% if current_user.image.blank? %>
+                      <%= image_tag "default_user_image.png", alt: "ログインユーザーのアイコン", class: "current-user-image" %>
+                    <% else %>
+                      <%= image_tag current_user.image, alt: "ログインユーザーのアイコン", class: "current-user-image" %>
+                    <% end %>
+                    <span class="current-user-name"><%= current_user.nickname %></span>
+                  <% end %>
+                </li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: ["btn", "logout"] %></li>
               <% else %>
-                <%= image_tag current_user.image, alt: "user icon", class: "current-user-image" %>
+                <li><%= link_to "ログイン", new_user_session_path, class: "btn" %></li>
+                <li><%= link_to "新規登録", new_user_registration_path, class: ["btn", "signup"] %></li>
               <% end %>
-              <span><%= current_user.nickname %></span>
-            <% end %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: ["logout", "btn"] %>
-          <% else %>
-            <%= link_to "ログイン", new_user_session_path, class: ["signin", "btn"] %>
-            <%= link_to "新規登録", new_user_registration_path, class: ["signup", "btn"] %>
-          <% end %>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
 
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
