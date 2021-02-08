@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   with_options presence: true do
     validates :nickname
-    validates :name, format: { with: /\A[a-z\d]{1}[a-z\d_]{3,}\z/i }
+    validates :username, format: { with: /\A[a-z\d]{1}[a-z\d_]{3,}\z/i }
   end
 end

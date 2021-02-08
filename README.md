@@ -34,7 +34,7 @@ Mency
 | Column             | Type    | Options                  |
 | ------------------ | ------- | ------------------------ |
 | nickname           | string  | null: false              |
-| name               | string  | null: false              |
+| username           | string  | null: false, unique:true |
 | email              | string  | null: false, unique:true |
 | encrypted_password | string  | null: false              |
 | age_id             | integer |                          |
