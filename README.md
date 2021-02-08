@@ -45,6 +45,18 @@ Mency
 ### Association
 - has_many :reviews
 
+## brandsテーブル
+| Column             | Type    | Options                  |
+| ------------------ | ------- | ------------------------ |
+| name               | string  | null: false              |
+| email              | string  | null: false, unique:true |
+| encrypted_password | string  | null: false              |
+| introduction       | text    |                          |
+| image              | string  |                          |
+
+### Association
+- has_many :items
+
 ## itemsテーブル
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
@@ -57,6 +69,7 @@ Mency
 
 ### Association
 - has_many :reviews
+- belongs_to :brand
 
 ## reviewsテーブル
 | Column | Type       | Options                        |
