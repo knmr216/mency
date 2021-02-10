@@ -8,4 +8,5 @@ class Brand < ApplicationRecord
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
   validates :email, uniqueness: true
+  validates :name, presence: true
 end

@@ -84,8 +84,13 @@ header {
   border-radius: 3px;
 }
 
-.signup {
+.signup, .login {
   margin-left: 15px;
+}
+
+.brand-login {
+  font-size: 14px;
+  color: var(--main-color2);
 }
 
 .logout {
