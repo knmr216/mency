@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_074734) do
     t.integer "unit_id", null: false
     t.integer "price", null: false
     t.text "introduction", null: false
+    t.string "image", null: false
     t.bigint "brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

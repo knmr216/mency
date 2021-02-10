@@ -66,6 +66,7 @@ Mency
 | unit_id      | integer    | null: false                    |
 | price        | integer    | null: false                    |
 | introduction | text       | null: false                    |
+| image        | string     | null: false                    |
 | brand        | references | null: false, foreign_key: true |
 
 ### Association
