@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -14,8 +16,8 @@
     <header>
       <div class="container">
         <div class="header">
-          <h1>
-            <%= link_to image_tag("title.png", alt: "Mency", class: "title-img"), root_path %>
+          <h1 class="header-title">
+            <%= link_to image_tag("title1.png", alt: "Mency", class: "header-title-img"), root_path %>
           </h1>
           <nav>
             <ul class="header-lists">
@@ -32,7 +34,7 @@
                 </li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: ["btn", "logout"] %></li>
               <% else %>
-                <li><%= link_to "ログイン", new_user_session_path, class: "btn" %></li>
+                <li><%= link_to "ログイン", new_user_session_path, class: ["btn", "login"] %></li>
                 <li><%= link_to "新規登録", new_user_registration_path, class: ["btn", "signup"] %></li>
               <% end %>
             </ul>
@@ -44,6 +46,20 @@
     <div class="main">
       <%= yield %>
     </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <%= link_to image_tag("title2.png", alt: "Mency", class: "footer-title-img"), root_path %>
+          <ul class="footer-lists">
+            <li><a href="https://twitter.com/knmr216" class="footer-icon twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter my-set"></i></a></li>
+            <li><a href="https://www.instagram.com/knmr216/" class="footer-icon instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram my-set"></i></a></li>
+            <li><a href="mailto:kohei.nomura.030216@gmail.com" class="footer-icon mail" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope my-set"></i></a></li>
+          </ul>
+          <p class="copyright">&copy; 2021 Kohei Nomura</p>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
