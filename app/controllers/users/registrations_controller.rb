@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
+  before_action :move_to_index, only: :new
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -39,6 +40,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   private
+
+  def move_to_index
+    redirect_to root_path if brand_signed_in?
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params

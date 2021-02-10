@@ -2,6 +2,7 @@
 
 class Brands::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :move_to_index, only: :new
 
   # GET /resource/sign_in
   # def new
@@ -18,7 +19,11 @@ class Brands::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  private
+
+  def move_to_index
+    redirect_to root_path if user_signed_in?
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
