@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :unit
+  belongs_to_active_hash :category
+  belongs_to_active_hash :unit
   belongs_to :brand
 
   with_options presence: true do
