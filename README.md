@@ -58,14 +58,15 @@ Mency
 - has_many :items
 
 ## itemsテーブル
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| name         | string  | null: false |
-| brand        | string  | null: false |
-| category_id  | integer | null: false |
-| capacity     | string  | null: false |
-| price        | integer | null: false |
-| introduction | text    | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false                    |
+| category_id  | integer    | null: false                    |
+| capacity     | integer    | null: false                    |
+| unit_id      | integer    | null: false                    |
+| price        | integer    | null: false                    |
+| introduction | text       | null: false                    |
+| brand        | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :reviews

@@ -33,6 +33,7 @@
                   <% end %>
                 </li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: ["btn", "logout"] %></li>
+
               <% elsif brand_signed_in? %>
                 <%= link_to root_path, class: "current-user" do %>
                   <% if current_brand.image.blank? %>
@@ -45,6 +46,7 @@
                 </li>
                 <li><%= link_to "商品を登録する", root_path, class: ["btn", "new-item"] %></li>
                 <li><%= link_to "ログアウト", destroy_brand_session_path, method: :delete, class: ["btn", "logout"] %></li>
+                
               <% else %>
                 <li><%= link_to "企業の方はこちら", new_brand_session_path, class: "brand-login" %></li>
                 <li><%= link_to "ログイン", new_user_session_path, class: ["btn", "login"] %></li>
