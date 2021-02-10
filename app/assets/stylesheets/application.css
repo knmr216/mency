@@ -93,7 +93,7 @@ header {
   color: var(--main-color2);
 }
 
-.logout {
+.logout, .new-item {
   margin-left: 25px;
 }
 
