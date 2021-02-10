@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  
+  before_action :move_to_index, only: :new
 
   def index
   end
@@ -18,6 +18,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def move_to_index
+    redirect_to root_path unless brand_signed_in?
+  end
 
   def item_params
     params.require(:item).permit(:name, :category_id, :capacity, :unit_id, :price, :introduction).merge(brand_id: current_brand.id)
