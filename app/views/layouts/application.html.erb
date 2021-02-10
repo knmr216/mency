@@ -33,6 +33,17 @@
                   <% end %>
                 </li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: ["btn", "logout"] %></li>
+              <% elsif brand_signed_in? %>
+                <%= link_to root_path, class: "current-user" do %>
+                  <% if current_brand.image.blank? %>
+                    <%= image_tag "default_user_image.png", alt: "ログインブランドのアイコン", class: "current-user-image" %>
+                  <% else %>
+                    <%= image_tag current_brand.image, alt: "ログインブランドのアイコン", class: "current-user-image" %>
+                  <% end %>
+                  <span class="current-user-name"><%= current_brand.name %></span>
+                <% end %>
+                </li>
+                <li><%= link_to "ログアウト", destroy_brand_session_path, method: :delete, class: ["btn", "logout"] %></li>
               <% else %>
                 <li><%= link_to "企業の方はこちら", new_brand_session_path, class: "brand-login" %></li>
                 <li><%= link_to "ログイン", new_user_session_path, class: ["btn", "login"] %></li>
