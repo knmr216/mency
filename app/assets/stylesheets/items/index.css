@@ -1,0 +1,14 @@
+.item-lists {
+  display: flex;
+
+}
+
+.item-link {
+  display: flex;
+}
+
+.item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

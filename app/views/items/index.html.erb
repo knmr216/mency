@@ -1,3 +1,17 @@
 <div class="container">
-  <h2>items#index</h2>
+  <h2>商品一覧</h2>
+  <ul class="item-lists">
+    <% @items.each do |item| %>
+      <li class="item">
+        <%= link_to root_path, class: "item-link" do %>
+          <%= image_tag item.image.url, class: "item-img" %>
+          <div>
+            <h3><%= item.brand.name %></h3>
+            <p><%= item.name %></p>
+            <p><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</p>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>
