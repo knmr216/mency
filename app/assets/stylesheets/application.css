@@ -41,7 +41,7 @@ body {
   margin-top: 70px;
 }
 
-input, select {
+input, select, textarea {
   border: 1px solid var(--main-color2);
   border-radius: 3px;
   padding: 10px 15px;

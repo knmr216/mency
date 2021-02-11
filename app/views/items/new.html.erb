@@ -16,24 +16,24 @@
     </div>
 
     <div class="field">
-      <%= f.label :image, "カテゴリ" %><br>
+      <%= f.label :category_id, "カテゴリ" %><br>
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
     </div>
 
     <div class="field">
-      <%= f.label :image, "容量" %><br>
+      <%= f.label :capacity, "容量" %><br>
       <%= f.text_field :capacity %>
       <%= f.collection_select(:unit_id, Unit.all, :id, :name, {}) %>
     </div>
 
     <div class="field">
-      <%= f.label :image, "価格" %><br>
+      <%= f.label :price, "価格" %><br>
       <%= f.text_field :price %>
     </div>
 
     <div class="field">
-      <%= f.label :image, "商品説明" %><br>
-      <%= f.text_field :introduction %>
+      <%= f.label :introduction, "商品説明" %><br>
+      <%= f.text_area :introduction %>
     </div>
 
     <div class="actions">
