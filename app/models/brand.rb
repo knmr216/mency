@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class Brand < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,10 +6,9 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  has_many :items
+
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
   validates :email, uniqueness: true
-  with_options presence: true do
-    validates :nickname
-    validates :username, format: { with: /\A[a-z\d]{1}[a-z\d_]{3,}\z/i }
-  end
+  validates :name, presence: true
 end

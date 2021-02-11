@@ -41,10 +41,14 @@ body {
   margin-top: 70px;
 }
 
-input {
+input, select, textarea {
   border: 1px solid var(--main-color2);
   border-radius: 3px;
   padding: 10px 15px;
+}
+
+select {
+  appearance: menulist-button;
 }
 
 
@@ -53,7 +57,7 @@ input {
 
 header {
   width: 100%;
-  border-bottom: 1px solid var(--main-color2);
+  border-bottom: 1px solid #ccc;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,7 +72,7 @@ header {
   align-items: center;
 }
 
-.title-img {
+.header-title-img {
   height: 60px;
 }
 
@@ -84,11 +88,16 @@ header {
   border-radius: 3px;
 }
 
-.signup {
+.signup, .login {
   margin-left: 15px;
 }
 
-.logout {
+.brand-login {
+  font-size: 14px;
+  color: var(--main-color2);
+}
+
+.logout, .new-item {
   margin-left: 25px;
 }
 
@@ -108,4 +117,54 @@ header {
 .current-user-name {
   color: var(--main-color2);
   font-size: 14px;
+}
+
+
+/* フッター */
+
+footer {
+  width: 100%;
+  background: var(--main-color1);
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-title-img {
+  height: 80px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-lists {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.footer-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  background: var(--base-color);
+}
+
+.my-set {
+  font-size: 2em;
+  position: relative;
+  left: 0.5px;
+  top: 5px;
+}
+
+.twitter, .instagram {
+  margin-right: 30px;
+}
+
+.copyright {
+  color: var(--base-color);
+  padding-bottom: 30px;
 }

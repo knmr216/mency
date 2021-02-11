@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :brands, controllers: {
+    sessions: 'brands/sessions',
+    passwords: 'brands/passwords',
+    registrations: 'brands/registrations'
+  }
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
   root to: 'items#index'
-  resources :items, only: :index
+  resources :items, only: [:index, :new, :create]
 end

@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h2>新規登録</h2>
+
+  <%= form_with model: @brand, url: brand_registration_path, local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+
+    <div class="field">
+      <%= f.text_field :name, placeholder: "ブランド名" %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, placeholder: "パスワード(英数字混合6文字以上)" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  <% end %>
+
+</div>

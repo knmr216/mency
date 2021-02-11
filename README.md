@@ -34,7 +34,7 @@ Mency
 | Column             | Type    | Options                  |
 | ------------------ | ------- | ------------------------ |
 | nickname           | string  | null: false              |
-| name               | string  | null: false              |
+| username           | string  | null: false, unique:true |
 | email              | string  | null: false, unique:true |
 | encrypted_password | string  | null: false              |
 | age_id             | integer |                          |
@@ -45,18 +45,33 @@ Mency
 ### Association
 - has_many :reviews
 
+## brandsテーブル
+| Column             | Type    | Options                  |
+| ------------------ | ------- | ------------------------ |
+| name               | string  | null: false              |
+| email              | string  | null: false, unique:true |
+| encrypted_password | string  | null: false              |
+| introduction       | text    |                          |
+| image              | string  |                          |
+
+### Association
+- has_many :items
+
 ## itemsテーブル
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| name         | string  | null: false |
-| brand        | string  | null: false |
-| category_id  | integer | null: false |
-| capacity     | string  | null: false |
-| price        | integer | null: false |
-| introduction | text    | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false                    |
+| category_id  | integer    | null: false                    |
+| capacity     | integer    | null: false                    |
+| unit_id      | integer    | null: false                    |
+| price        | integer    | null: false                    |
+| introduction | text       | null: false                    |
+| image        | string     | null: false                    |
+| brand        | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :reviews
+- belongs_to :brand
 
 ## reviewsテーブル
 | Column | Type       | Options                        |
