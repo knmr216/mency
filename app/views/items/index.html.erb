@@ -3,7 +3,7 @@
   <ul class="item-lists">
     <% @items.each do |item| %>
       <li class="item">
-        <%= link_to item_path(item.id), class: "item-link" do %>
+        <%= link_to item_path(item.id), class: "flex-wrapper" do %>
           <%= image_tag item.image.url, class: "item-img" %>
           <div>
             <h3><%= item.brand.name %></h3>

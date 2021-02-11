@@ -51,6 +51,10 @@ select {
   appearance: menulist-button;
 }
 
+.flex-wrapper {
+  display: flex;
+}
+
 
 
 /* ヘッダー */
