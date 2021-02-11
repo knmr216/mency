@@ -51,7 +51,7 @@ select {
   appearance: menulist-button;
 }
 
-.flex-wrapper {
+.flex {
   display: flex;
 }
 
