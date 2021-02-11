@@ -57,6 +57,7 @@ select {
 
 header {
   width: 100%;
+  background: var(--base-color);
   border-bottom: 1px solid #ccc;
   position: fixed;
   top: 0;
