@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :unit
   belongs_to :brand
+  has_many :reviews
 
   mount_uploader :image, ImageUploader
 
