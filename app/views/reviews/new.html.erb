@@ -1,4 +1,37 @@
 <div class="container">
-  <h2>クチコミ投稿</h2>
-  
+
+  <h2>クチコミの投稿</h2>
+
+  <%= form_with model: [@item, @review], rocal: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="field">
+      <label>評価</label>
+      <div class="ratings">
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "画像を追加" %><br>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :text, "クチコミ本文" %><br>
+      <%= f.text_area :text %>
+    </div>
+
+    <%= f.hidden_field :score, id: "rating-value" %>
+    <%= f.hidden_field :item_id, value: @item.id %>
+
+    <div class="actions">
+      <%= f.submit "投稿する" %>
+    </div>
+  <% end %>
+
 </div>

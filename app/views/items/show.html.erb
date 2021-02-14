@@ -7,6 +7,7 @@
       <p><%= @item.category.name %></p>
       <p><%= @item.capacity %><%= @item.unit.name %> / <%= @item.price %>円</p>
       <p><%= @item.introduction %></p>
+      <%=  link_to "この商品に対するクチコミを投稿する", new_item_review_path(@item.id), class: "btn2" %>
     </div>
   </div>
 </div>
