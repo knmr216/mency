@@ -2,7 +2,7 @@
 
   <h2>クチコミの投稿</h2>
 
-  <%= form_with model: [@item, @review], rocal: true do |f| %>
+  <%= form_with model: [@item, @review], local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
     <div class="field">
@@ -27,7 +27,6 @@
     </div>
 
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.hidden_field :item_id, value: @item.id %>
 
     <div class="actions">
       <%= f.submit "投稿する" %>
