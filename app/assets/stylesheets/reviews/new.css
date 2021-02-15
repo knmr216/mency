@@ -1,0 +1,8 @@
+.ratings {
+  cursor: default;
+}
+
+.fa-star {
+  cursor: pointer;
+  color: var(--accent-color);
+}
