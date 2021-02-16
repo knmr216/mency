@@ -48,10 +48,6 @@ select {
   appearance: menulist-button;
 }
 
-<<<<<<< Updated upstream
-.flex {
-  display: flex;
-=======
 .btn {
   background: var(--accent-color);
   color: #fff;
@@ -68,22 +64,6 @@ h2 {
   padding-left: 15px;
   border-left: 7px solid var(--accent-color);
   font-size: 30px;
->>>>>>> Stashed changes
-}
-
-.btn {
-  background: var(--accent-color);
-  color: var(--base-color);
-  padding: 8px 18px;
-  border-radius: 3px;
-}
-
-.btn2 {
-  background: var(--base-color);
-  color: var(--accent-color);
-  padding: 8px 18px;
-  border: 3px solid var(--accent-color);
-  border-radius: 3px;
 }
 
 
