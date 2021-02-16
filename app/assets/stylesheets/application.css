@@ -24,9 +24,6 @@ body {
 }
 
 :root {
-  --base-color: #fff;
-  --main-color1: #000;
-  --main-color2: #626262;
   --accent-color: #76bfff;
 }
 
@@ -42,7 +39,7 @@ body {
 }
 
 input, select, textarea {
-  border: 1px solid var(--main-color2);
+  border: 1px solid #555;
   border-radius: 3px;
   padding: 10px 15px;
 }
@@ -51,8 +48,27 @@ select {
   appearance: menulist-button;
 }
 
+<<<<<<< Updated upstream
 .flex {
   display: flex;
+=======
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 3px;
+}
+
+.fa-star {
+  color: var(--accent-color);
+}
+
+h2 {
+  margin-top: 90px;
+  padding-left: 15px;
+  border-left: 7px solid var(--accent-color);
+  font-size: 30px;
+>>>>>>> Stashed changes
 }
 
 
@@ -61,7 +77,7 @@ select {
 
 header {
   width: 100%;
-  background: var(--base-color);
+  background: #fff;
   border-bottom: 1px solid #ccc;
   position: fixed;
   top: 0;
@@ -99,7 +115,7 @@ header {
 
 .brand-login {
   font-size: 14px;
-  color: var(--main-color2);
+  color: #555;
 }
 
 .logout, .new-item {
@@ -120,7 +136,7 @@ header {
 }
 
 .current-user-name {
-  color: var(--main-color2);
+  color: #555;
   font-size: 14px;
 }
 
@@ -129,7 +145,7 @@ header {
 
 footer {
   width: 100%;
-  background: var(--main-color1);
+  background: #000;
 }
 
 .footer {
@@ -155,7 +171,7 @@ footer {
   height: 60px;
   border-radius: 50%;
   line-height: 60px;
-  background: var(--base-color);
+  background: #fff;
 }
 
 .my-set {
@@ -170,6 +186,6 @@ footer {
 }
 
 .copyright {
-  color: var(--base-color);
+  color: #fff;
   padding-bottom: 30px;
 }

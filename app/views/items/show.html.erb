@@ -1,12 +1,64 @@
 <div class="container">
-  <p><%= @item.brand.name %></p>
-  <h2><%= @item.name %></h2>
-  <div class="flex">
+
+  <h2>商品詳細</h2>
+  <p class="show-brand-name"><%= @item.brand.name %></p>
+  <h3 class="show-item-name"><%= @item.name %></h3>
+  <div class="show-item">
     <%= image_tag @item.image.url, class: "show-item-img" %>
+<<<<<<< Updated upstream
     <div>
       <p><%= @item.category.name %></p>
       <p><%= @item.capacity %><%= @item.unit.name %> / <%= @item.price %>円</p>
       <p><%= @item.introduction %></p>
+=======
+    <div class="show-item-right">
+      <div class="show-avg">
+        <div class="show-avg-stars">
+          <i class="fa-star fas show-avg-star"></i>
+          <i class="fa-star fas show-avg-star"></i>
+          <i class="fa-star fas show-avg-star"></i>
+          <i class="fa-star fas show-avg-star"></i>
+          <i class="fa-star fas show-avg-star"></i>
+        </div>
+        <p class="show-avg-value"><%= @item.avg_score %></p>
+      </div>
+      <div class="show-specs">
+        <dl class="show-spec">
+          <dt class="show-spec-title">カテゴリ</dt>
+          <dd><%= @item.category.name %></dd>
+        </dl>
+        <dl class="show-spec">
+          <dt class="show-spec-title">容量 / 価格</dt>
+          <dd><%= @item.capacity %><%= @item.unit.name %> / <%= @item.price %>円</dd>
+        </dl>
+        <dl class="show-spec">
+          <dt class="show-spec-title">商品説明</dt>
+          <dd><%= @item.introduction %></dd>
+        </dl>
+      </div>
+      <%= link_to "この商品のクチコミを投稿する", new_item_review_path(@item.id), class: "btn show-new-review" %>
+>>>>>>> Stashed changes
     </div>
   </div>
+
+  <h2>クチコミ一覧</h2>
+  <ul class="show-reviews">
+    <% @reviews.each do |review| %>
+      <li class="show-review">
+        <%= link_to item_path(@item.id), class: "show-review-container" do %>
+          <% if review.image.present? %>
+            <%= image_tag review.image.url, class: "show-review-img" %>
+          <% else %>
+            <div class="show-review-img"></div>
+          <% end %>
+          <div class="show-review-right">
+            <p><i class="fas fa-star show-review-star"></i><%= review.score %></p>
+            <p class="show-review-text"><%= review.text %></p>
+            <p class="show-review-user-nickname"><%= review.user.nickname %></p>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
 </div>

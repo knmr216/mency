@@ -1,5 +1,112 @@
+.show-brand-name {
+  margin: 30px 0 7px;
+}
+
+.show-item-name {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.show-item {
+  display: flex;
+}
+
 .show-item-img {
   height: 400px;
   width: 400px;
   object-fit: cover;
+  margin-right: 20px;
+}
+
+.show-avg {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.show-avg-stars {
+  cursor: default;
+}
+
+.show-avg-star {
+  font-size: 30px;
+}
+
+.show-avg-value {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.show-specs {
+  margin-bottom: 30px;
+}
+
+.show-spec {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 8px 0 8px 10px;
+}
+
+.show-specs .show-spec:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.show-spec-title {
+  min-width: 100px;
+  font-weight: normal !important;
+}
+
+.btn.show-new-review {
+  display: table;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+
+
+.show-reviews {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-review {
+  margin: 15px;
+  width: calc(50% - 30px);
+}
+
+.show-review-container {
+  display: flex;
+}
+
+.show-review-img {
+  min-width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background: #ddd;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.show-review-right {
+  position: relative;
+}
+
+.show-review-star {
+  margin-right: 3px;
+}
+
+.show-review-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.show-review-user-nickname {
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  color: #777;
+  white-space: nowrap;
 }
