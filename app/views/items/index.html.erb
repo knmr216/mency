@@ -1,11 +1,11 @@
 <div class="container">
   <h2>商品一覧</h2>
-  <ul class="item-lists">
+  <ul class="index-items">
     <% @items.each do |item| %>
-      <li class="item">
-        <%= link_to item_path(item.id), class: "flex" do %>
-          <%= image_tag item.image.url, class: "item-img" %>
-          <div>
+      <li class="index-item">
+        <%= link_to item_path(item.id), class: "index-item-container" do %>
+          <%= image_tag item.image.url, class: "index-item-img" %>
+          <div class="index-item-right">
             <h3><%= item.brand.name %></h3>
             <p><%= item.name %></p>
             <p><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</p>

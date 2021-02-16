@@ -19,4 +19,12 @@ class Item < ApplicationRecord
     validates :unit_id
   end
 
+  def avg_score
+    if self.reviews.present?
+      reviews.average(:score).round(1).to_f
+    else
+      0.0
+    end
+  end
+
 end

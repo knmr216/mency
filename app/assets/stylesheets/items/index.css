@@ -1,8 +1,12 @@
-.item-lists {
+.index-items {
   display: flex;
 }
 
-.item-img {
+.index-item-container {
+  display: flex;
+}
+
+.index-item-img {
   width: 100px;
   height: 100px;
   object-fit: cover;
