@@ -5,12 +5,6 @@
   <h3 class="show-item-name"><%= @item.name %></h3>
   <div class="show-item">
     <%= image_tag @item.image.url, class: "show-item-img" %>
-<<<<<<< Updated upstream
-    <div>
-      <p><%= @item.category.name %></p>
-      <p><%= @item.capacity %><%= @item.unit.name %> / <%= @item.price %>円</p>
-      <p><%= @item.introduction %></p>
-=======
     <div class="show-item-right">
       <div class="show-avg">
         <div class="show-avg-stars">
@@ -37,7 +31,6 @@
         </dl>
       </div>
       <%= link_to "この商品のクチコミを投稿する", new_item_review_path(@item.id), class: "btn show-new-review" %>
->>>>>>> Stashed changes
     </div>
   </div>
 

@@ -76,8 +76,9 @@ Mency
 ## reviewsテーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| star   | integer    | null: false                    |
+| score  | integer    | null: false                    |
 | text   | text       | null: false                    |
+| image  | string     |                                |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 

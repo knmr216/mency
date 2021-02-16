@@ -6,5 +6,4 @@ class Review < ApplicationRecord
     validates :score
     validates :text
   end
-
 end
