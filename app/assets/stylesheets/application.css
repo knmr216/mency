@@ -35,7 +35,7 @@ body {
 }
 
 .main {
-  margin-top: 70px;
+  margin: 70px 0;
 }
 
 input, select, textarea {
