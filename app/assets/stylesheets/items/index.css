@@ -1,5 +1,11 @@
 .index-items {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.index-item {
+  margin: 10px;
+  width: calc(33% - 20px);
 }
 
 .index-item-container {
@@ -10,4 +16,23 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
+  margin-right: 5px;
+}
+
+.index-item-brand {
+  font-size: 14px;
+  color: #333;
+}
+
+.index-item-avg {
+  font-size: 15px;
+}
+
+.index-avg-star {
+  margin-right: 3px;
+}
+
+.index-item-price {
+  font-size: 14px;
+  color: #777;
 }

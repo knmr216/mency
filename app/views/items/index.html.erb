@@ -6,9 +6,10 @@
         <%= link_to item_path(item.id), class: "index-item-container" do %>
           <%= image_tag item.image.url, class: "index-item-img" %>
           <div class="index-item-right">
-            <h3><%= item.brand.name %></h3>
-            <p><%= item.name %></p>
-            <p><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</p>
+            <p class="index-item-brand"><%= item.brand.name %></p>
+            <p class="index-item-name"><%= item.name %></p>
+            <p class="index-item-avg"><i class="fas fa-star index-avg-star"></i><%= item.avg_score %></p>
+            <p class="index-item-price"><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</p>
           </div>
         <% end %>
       </li>
