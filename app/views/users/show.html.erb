@@ -1,3 +1,22 @@
 <div class="container">
   <h2>ユーザー情報</h2>
+  <div class="show-user-container">
+    <div class="show-user-left">
+      <% if current_user.image.blank? %>
+        <%= image_tag "default_user_image.png", class: "show-user-img" %>
+      <% else %>
+        <%= image_tag current_user.image.url, class: "show-user-img" %>
+      <% end %>
+      <div class="show-user-right">
+        <p class="show-user-nickname"><%= @user.nickname %></p>
+        <p class="show-user-username">@<%= @user.username %></p>
+      </div>
+    </div>
+    <div class="show-user-setting">
+      <%= link_to "プロフィールを編集", user_path(params[:id]), class: "btn2" %>
+    </div>
+  </div>
+
+  <h2>クチコミ</h2>
+  <%= render partial: "shared/reviews", locals: { reviews: @reviews } %>
 </div>
