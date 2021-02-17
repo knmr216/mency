@@ -55,6 +55,14 @@ select {
   border-radius: 3px;
 }
 
+.btn2 {
+  border: 3px solid var(--accent-color);
+  color: var(--accent-color);
+  background: white;
+  padding: 8px 18px;
+  border-radius: 3px;
+}
+
 .fa-star {
   color: var(--accent-color);
 }
