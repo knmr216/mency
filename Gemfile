@@ -57,3 +57,7 @@ gem 'pry-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'active_hash'
+
+group :production, :staging do
+  gem 'unicorn'
+end
