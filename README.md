@@ -37,8 +37,6 @@ Mency
 | username           | string  | null: false, unique:true |
 | email              | string  | null: false, unique:true |
 | encrypted_password | string  | null: false              |
-| age_id             | integer |                          |
-| skin_quality_id    | integer |                          |
 | introduction       | text    |                          |
 | image              | string  |                          |
 
