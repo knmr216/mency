@@ -30,6 +30,13 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Username can't be blank")
       end
+      it '重複したusernameが存在する場合登録できない' do
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.username = @user.username
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Username has already been taken')
+      end
       it 'usernameが3文字以下では登録できない' do
         @user.username = 'tar'
         @user.valid?
@@ -72,6 +79,18 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'abc12'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
+      end
+      it 'passwordに半角英字が含まれなければ登録できない' do
+        @user.password = '123456'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+      it 'passwordに半角数字が含まれなければ登録できない' do
+        @user.password = 'abcdef'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが存在してもpass_confirmationが空では登録できない' do
         @user.password_confirmation = ''
