@@ -5,6 +5,7 @@ Mency
 メンズ向けコスメクチコミアプリ
 
 # URL
+http://54.64.35.32/
 
 # テスト用アカウント
 
@@ -37,8 +38,6 @@ Mency
 | username           | string  | null: false, unique:true |
 | email              | string  | null: false, unique:true |
 | encrypted_password | string  | null: false              |
-| age_id             | integer |                          |
-| skin_quality_id    | integer |                          |
 | introduction       | text    |                          |
 | image              | string  |                          |
 
