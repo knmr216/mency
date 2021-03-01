@@ -9,14 +9,16 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :capacity
-    validates :price
     validates :introduction
     validates :image
-  end
-  with_options numericality: { other_than: 0 } do
-    validates :category_id
-    validates :unit_id
+    with_options numericality: { only_integer: true } do
+      validates :capacity
+      validates :price
+    end
+    with_options numericality: { other_than: 0 } do
+      validates :category_id
+      validates :unit_id
+    end
   end
 
   def avg_score
