@@ -13,16 +13,17 @@
 }
 
 .review-img {
-  min-width: 120px;
+  width: 120px;
   height: 120px;
   object-fit: cover;
   background: #ddd;
-  border-radius: 3px;
+  border-radius: 4px;
   margin-right: 5px;
 }
 
 .review-right {
   position: relative;
+  width: calc(100% - 125px);
 }
 
 .review-star {
@@ -30,6 +31,7 @@
 }
 
 .review-text {
+  font-size: 15px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
