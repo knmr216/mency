@@ -141,7 +141,7 @@ header {
 
 footer {
   width: 100%;
-  background: #000;
+  background: #eee;
 }
 
 .footer {
@@ -150,38 +150,11 @@ footer {
 }
 
 .footer-title-img {
-  height: 80px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.footer-lists {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-}
-
-.footer-icon {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  line-height: 60px;
-  background: #fff;
-}
-
-.my-set {
-  font-size: 2em;
-  position: relative;
-  left: 0.5px;
-  top: 5px;
-}
-
-.twitter, .instagram {
-  margin-right: 30px;
+  height: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .copyright {
-  color: #fff;
   padding-bottom: 30px;
 }
