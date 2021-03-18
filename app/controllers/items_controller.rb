@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: :new
 
   def index
-    @items = Item.includes(:brand).order('created_at DESC')
+    @items = Item.includes(:brand, :reviews).order('created_at DESC')
   end
 
   def new
