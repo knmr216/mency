@@ -14,7 +14,7 @@
           <i class="fa-star fas show-avg-star"></i>
           <i class="fa-star fas show-avg-star"></i>
         </div>
-        <p class="show-avg-value"><%= @item.avg_score %></p>
+        <p class="show-avg-value"><%= @item.avg_score %> <span class="show-reviews-count">(<%= @reviews.count %>件)</span></p>
       </div>
       <div class="show-specs">
         <dl class="show-spec">

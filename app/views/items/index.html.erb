@@ -8,7 +8,7 @@
           <div class="index-item-right">
             <p class="index-item-brand"><%= item.brand.name %></p>
             <p class="index-item-name"><%= item.name %></p>
-            <p class="index-item-avg"><i class="fas fa-star index-avg-star"></i><%= item.avg_score %></p>
+            <p class="index-item-avg"><i class="fas fa-star index-avg-star"></i><%= item.avg_score %> (<%= item.reviews.count %>件)</p>
             <p class="index-item-price"><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</p>
           </div>
         <% end %>
