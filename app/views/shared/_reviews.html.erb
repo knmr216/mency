@@ -8,9 +8,15 @@
           <div class="review-img"></div>
         <% end %>
         <div class="review-right">
-          <p><i class="fas fa-star review-star"></i><%= review.score %></p>
-          <p class="review-text"><%= review.text %></p>
-          <p class="review-user-nickname"><%= review.user.nickname %></p>
+          <div class="review-score">
+            <div class="review-stars">
+              <span class="review-stars-front" style="width: <%= review.score + ( 0.2 * review.score ) %>em">★★★★★</span>
+              <span class="review-stars-back">☆☆☆☆☆</span>
+            </div>
+            <%= review.score %>
+          </div>
+          <div class="review-text"><%= review.text %></div>
+          <div class="review-user-nickname"><%= review.user.nickname %></div>
         </div>
       <% end %>
     </li>

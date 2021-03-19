@@ -26,8 +26,19 @@
   width: calc(100% - 125px);
 }
 
-.review-star {
+.review-stars {
+  width: 5.8em;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
   margin-right: 3px;
+}
+
+.review-stars-front {
+  position: absolute;
+  overflow: hidden;
 }
 
 .review-text {
