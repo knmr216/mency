@@ -6,16 +6,22 @@
   <div class="show-item">
     <%= image_tag @item.image.url, class: "show-item-img" %>
     <div class="show-item-right">
-      <div class="show-avg">
-        <div class="show-avg-stars">
-          <i class="fa-star fas show-avg-star"></i>
-          <i class="fa-star fas show-avg-star"></i>
-          <i class="fa-star fas show-avg-star"></i>
-          <i class="fa-star fas show-avg-star"></i>
-          <i class="fa-star fas show-avg-star"></i>
+      <a href="#reviews" class="show-avg-btn">
+        <div class="show-avg">
+          <div class="show-avg-left">
+            <div class="show-avg-stars">
+              <span class="show-avg-stars-front" style="width: <%= @item.avg_score + ( 0.2 * @item.avg_score.floor ) %>em">★★★★★</span>
+              <span class="show-avg-stars-back">☆☆☆☆☆</span>
+            </div>
+            <span class="show-avg-value"><%= @item.avg_score %></span>
+            <span class="show-reviews-count">(<%= @reviews.count %>件)</span>
+          </div>
+          <div class="show-avg-right">
+            <span class="show-reviews-text">クチコミ一覧を見る</span>
+            <i class="fas fa-angle-down show-reviews-sort"></i>
+          </div>
         </div>
-        <p class="show-avg-value"><%= @item.avg_score %> <span class="show-reviews-count">(<%= @reviews.count %>件)</span></p>
-      </div>
+      </a>
       <div class="show-specs">
         <dl class="show-spec">
           <dt class="show-spec-title">カテゴリ</dt>
@@ -34,7 +40,7 @@
     </div>
   </div>
 
-  <h2>クチコミ一覧</h2>
+  <h2 id="reviews">クチコミ一覧</h2>
   <%= render partial: "shared/reviews", locals: { reviews: @reviews } %>
 
 </div>

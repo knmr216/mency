@@ -19,28 +19,64 @@
   margin-right: 20px;
 }
 
+.show-avg-btn {
+  width: 100%;
+  display: inline-block;
+  background: #f5f5f5;
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 16%);
+}
+
 .show-avg {
   display: flex;
-  margin-bottom: 30px;
+  justify-content: space-between;
 }
 
 .show-avg-stars {
-  cursor: default;
+  width: 5.8em;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
 }
 
-.show-avg-star {
-  font-size: 30px;
+.show-avg-stars-front {
+  position: absolute;
+  overflow: hidden;
 }
 
 .show-avg-value {
+  position: relative;
+  top: -4px;
   margin-left: 10px;
   font-size: 20px;
 }
 
 .show-reviews-count {
+  position: relative;
+  top: -5px;
   color: #555;
   font-size: 18px;
-  padding-left: 5px;
+  margin-left: 5px;
+}
+
+.show-reviews-text {
+  position: relative;
+  top: 8px;
+  font-size: 14px;
+  margin-right: 7px;
+  color: #555;
+}
+
+.show-reviews-sort {
+  position: relative;
+  top: 11px;
+  margin-right: 10px;
+  font-size: 25px;
+  color: #555;
 }
 
 .show-specs {

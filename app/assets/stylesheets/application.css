@@ -21,6 +21,7 @@
 body {
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 
 :root {
