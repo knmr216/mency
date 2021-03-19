@@ -24,6 +24,20 @@
   color: #333;
 }
 
+.index-avg-stars {
+  width: 5.8em;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
+}
+
+.index-avg-stars-front {
+  position: absolute;
+  overflow: hidden;
+}
+
 .index-item-avg {
   font-size: 15px;
 }
