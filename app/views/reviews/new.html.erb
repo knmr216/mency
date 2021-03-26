@@ -1,11 +1,12 @@
 <div class="container">
 
-  <h2>クチコミの投稿</h2>
+  <h2 class="form-title">クチコミの投稿</h2>
+  <div class="form-line"></div>
 
-  <%= form_with model: [@item, @review], local: true do |f| %>
+  <%= form_with model: [@item, @review], class: "form-wrapper", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-    <div class="field">
+    <div class="form-field">
       <label>評価</label>
       <div class="stars-count">
         <i class="far fa-star"></i>
@@ -16,20 +17,20 @@
       </div>
     </div>
 
-    <div class="field">
-      <%= f.label :image, "画像を追加" %><br>
-      <%= f.file_field :image %>
+    <div class="form-field">
+      <%= f.label :image, "画像を追加", class: "form-label" %><br>
+      <%= f.file_field :image, class: "form-file-field" %>
     </div>
 
-    <div class="field">
-      <%= f.label :text, "クチコミ本文" %><br>
-      <%= f.text_area :text %>
+    <div class="form-field">
+      <%= f.label :text, "クチコミ本文", class: "form-label" %><br>
+      <%= f.text_area :text, class: "form-text-area", placeholder: "敏感肌だけどヒリヒリしなかった！" %>
     </div>
 
     <%= f.hidden_field :score, id: "rating-value" %>
 
-    <div class="actions">
-      <%= f.submit "投稿する" %>
+    <div class="form-field">
+      <%= f.submit "投稿する", class: ["btn", "form-btn"] %>
     </div>
   <% end %>
 

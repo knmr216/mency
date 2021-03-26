@@ -1,3 +1,9 @@
+.error-messages {
+  width: 320px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
 .error-message {
   list-style: inside;
   color: red;
