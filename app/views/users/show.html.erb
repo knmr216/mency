@@ -14,7 +14,7 @@
     </div>
     <% if user_signed_in? && @user.id == current_user.id %>
       <div class="show-user-setting">
-        <%= link_to "プロフィールを編集", user_path(@user.id), class: "btn2" %>
+        <%= link_to "プロフィールを編集", edit_user_registration_path(@user.id), class: "btn2" %>
       </div>
     <% end %>
   </div>

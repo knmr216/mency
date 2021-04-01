@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, on: :create
   validates :email, uniqueness: true
   with_options presence: true do
     validates :nickname
