@@ -1,15 +1,18 @@
 <div class="container">
   <h2>ユーザー情報</h2>
   <div class="show-user-container">
-    <div class="show-user-left">
-      <% if @user.image.blank? %>
-        <%= image_tag "default_user_image.png", class: "show-user-img" %>
-      <% else %>
-        <%= image_tag @user.image.url, class: "show-user-img" %>
-      <% end %>
+    <div class="show-user-details">
+      <div class="show-user-left">
+        <% if @user.image.blank? %>
+          <%= image_tag "default_user_image.png", class: "show-user-img" %>
+        <% else %>
+          <%= image_tag @user.image.url, class: "show-user-img" %>
+        <% end %>
+      </div>
       <div class="show-user-right">
-        <p class="show-user-nickname"><%= @user.nickname %></p>
-        <p class="show-user-username">@<%= @user.username %></p>
+        <div class="show-user-nickname"><%= @user.nickname %></div>
+        <div class="show-user-username">@<%= @user.username %></div>
+        <div class="show-user-introduction"><%= @user.introduction %></div>
       </div>
     </div>
     <% if user_signed_in? && @user.id == current_user.id %>
