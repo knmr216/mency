@@ -1,24 +1,4 @@
 <div class="container">
   <h2>商品一覧</h2>
-  <ul class="index-items">
-    <% @items.each do |item| %>
-      <li class="index-item">
-        <%= link_to item_path(item.id), class: "index-item-container" do %>
-          <%= image_tag item.image.url, class: "index-item-img" %>
-          <div class="index-item-right">
-            <div class="index-item-brand"><%= item.brand.name %></div>
-            <div class="index-item-name"><%= item.name %></div>
-            <div class="index-item-avg">
-              <div class="index-avg-stars">
-                <span class="index-avg-stars-front" style="width: <%= item.avg_score + ( 0.2 * item.avg_score.floor ) %>em">★★★★★</span>
-                <span class="index-avg-stars-back">☆☆☆☆☆</span>
-              </div>
-              <%= item.avg_score %> (<%= item.reviews.count %>件)
-            </div>
-            <div class="index-item-price"><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</div>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <%= render partial: "shared/items", locals: { items: @items } %>
 </div>

@@ -1,0 +1,21 @@
+<ul class="items">
+    <% items.each do |item| %>
+      <li class="item">
+        <%= link_to item_path(item.id), class: "item-container" do %>
+          <%= image_tag item.image.url, class: "item-img" %>
+          <div class="item-right">
+            <div class="item-brand"><%= item.brand.name %></div>
+            <div class="item-name"><%= item.name %></div>
+            <div class="item-avg">
+              <div class="item-avg-stars">
+                <span class="item-avg-stars-front" style="width: <%= item.avg_score + ( 0.2 * item.avg_score.floor ) %>em">★★★★★</span>
+                <span class="item-avg-stars-back">☆☆☆☆☆</span>
+              </div>
+              <%= item.avg_score %> (<%= item.reviews.count %>件)
+            </div>
+            <div class="item-price"><%= item.capacity %><%= item.unit.name %> / <%= item.price %>円</div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>

@@ -1,0 +1,52 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin: 10px;
+  width: calc(33% - 20px);
+}
+
+.item-container {
+  display: flex;
+}
+
+.item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.item-brand {
+  font-size: 14px;
+  color: #333;
+}
+
+.item-avg-stars {
+  width: 5.8em;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
+}
+
+.item-avg-stars-front {
+  position: absolute;
+  overflow: hidden;
+}
+
+.item-avg {
+  font-size: 15px;
+}
+
+.item-avg-star {
+  margin-right: 3px;
+}
+
+.item-price {
+  font-size: 14px;
+  color: #777;
+}
