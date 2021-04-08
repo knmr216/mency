@@ -40,7 +40,7 @@
                     <% if current_brand.image.blank? %>
                       <%= image_tag "default_user_image.png", alt: "ログインブランドのアイコン", class: "current-user-image" %>
                     <% else %>
-                      <%= image_tag current_brand.image, alt: "ログインブランドのアイコン", class: "current-user-image" %>
+                      <%= image_tag current_brand.image.url, alt: "ログインブランドのアイコン", class: "current-user-image" %>
                     <% end %>
                     <span class="current-user-name"><%= current_brand.name %></span>
                   <% end %>

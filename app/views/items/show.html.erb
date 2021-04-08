@@ -36,7 +36,11 @@
           <dd><%= @item.introduction %></dd>
         </dl>
       </div>
-      <%= link_to "この商品のクチコミを投稿する", new_item_review_path(@item.id), class: "btn show-new-review" %>
+      <% if user_signed_in? %>
+        <%= link_to "この商品のクチコミを投稿する", new_item_review_path(@item.id), class: "btn show-new-review-btn" %>
+      <% elsif brand_signed_in? && current_brand.id == @item.brand.id %>
+        <%= link_to "商品情報を編集する", edit_item_path(@item.id), class: "btn show-edit-item-btn" %>
+      <% end %>
     </div>
   </div>
 

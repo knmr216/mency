@@ -1,23 +1,29 @@
 <div class="container">
   <h2>ブランド情報</h2>
   <div class="show-brand-container">
-    <div class="show-brand-details">
-      <div class="show-brand-left">
-        <% if @brand.image.blank? %>
-          <%= image_tag "default_user_image.png", class: "show-brand-img" %>
-        <% else %>
-          <%= image_tag @brand.image.url, class: "show-brand-img" %>
-        <% end %>
-      </div>
-      <div class="show-brand-right">
-        <div class="show-brand-name"><%= @brand.name %></div>
-      </div>
+    <div class="show-brand-left">
+      <% if @brand.image.blank? %>
+        <%= image_tag "default_user_image.png", class: "show-brand-img" %>
+      <% else %>
+        <%= image_tag @brand.image.url, class: "show-brand-img" %>
+      <% end %>
     </div>
-    <% if brand_signed_in? && @brand.id == current_brand.id %>
-      <div class="show-brand-setting">
-        <%= link_to "プロフィールを編集", edit_brand_registration_path(@brand.id), class: "btn2" %>
-      </div>
-    <% end %>
+    <div class="show-brand-center">
+      <div class="show-brand-name"><%= @brand.name %></div>
+      <div class="show-brand-introduction"><%= @brand.introduction %></div>
+    </div>
+    <div class="show-brand-right">
+      <% if brand_signed_in? && @brand.id == current_brand.id %>
+        <div class="show-brand-setting">
+          <%= link_to "プロフィールを編集", edit_brand_registration_path, class: ["show-brand-setting-btn", "btn2"] %>
+        </div>
+      <% end %>
+      <% if @brand.official_site.present? %>
+        <div class="show-brand-site">
+          <%= link_to "公式サイトを見る", @brand.official_site, class: ["show-brand-site-btn", "btn2"] %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <h2>商品一覧</h2>

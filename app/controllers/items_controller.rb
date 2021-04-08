@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, only: :new
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.includes(:brand, :reviews).order('created_at DESC')
@@ -18,12 +19,26 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
+
   def show
-    @item = Item.find(params[:id])
     @reviews = @item.reviews.includes(:user)
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def move_to_index
     redirect_to root_path unless brand_signed_in?

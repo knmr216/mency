@@ -48,6 +48,7 @@ http://54.64.35.32/
 | Column             | Type    | Options                  |
 | ------------------ | ------- | ------------------------ |
 | name               | string  | null: false              |
+| official_site      | string  |                          |
 | email              | string  | null: false, unique:true |
 | encrypted_password | string  | null: false              |
 | introduction       | text    |                          |
