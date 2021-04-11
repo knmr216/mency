@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
   resources :items, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :show]
   end
   resources :users, only: :show
   resources :brands, only: :show

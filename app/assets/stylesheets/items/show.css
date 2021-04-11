@@ -1,6 +1,8 @@
 .show-item-brand-name {
   margin: 30px 0 7px;
+  font-size: 18px;
   color: #777;
+  text-decoration: underline;
 }
 
 .show-item-name {

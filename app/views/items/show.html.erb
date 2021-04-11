@@ -1,7 +1,7 @@
 <div class="container">
 
   <h2>商品詳細</h2>
-  <p class="show-item-brand-name"><%= @item.brand.name %></p>
+  <div class="show-item-brand-name"><%= link_to @item.brand.name, brand_path(@item.brand.id) %></div>
   <h3 class="show-item-name"><%= @item.name %></h3>
   <div class="show-item">
     <%= image_tag @item.image.url, class: "show-item-img" %>

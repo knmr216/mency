@@ -1,0 +1,57 @@
+<div class="container">
+
+  <h2>クチコミ詳細</h2>
+
+  <div class="show-review-container">
+
+    <div class="show-review">
+      <% if @review.image.present? %>
+        <%= image_tag @review.image.url, class: "show-review-img" %>
+      <% else %>
+        <div class="show-review-no-img">no image.</div>
+      <% end %>
+
+      <div class="show-review-right">
+      <%= link_to user_path(@user.id), class: "show-review-user" do %>
+          <% if @user.image.blank? %>
+            <%= image_tag "default_user_image.png", class: "show-review-user-img" %>
+          <% else %>
+            <%= image_tag @user.image.url, class: "show-review-user-img" %>
+          <% end %>
+          <div class="show-review-user-right">
+            <div class="show-review-user-nickname"><%= @user.nickname %></div>
+            <div class="show-review-user-username">@<%= @user.username %></div>
+          </div>
+        <% end %>
+        <div class="show-review-score">
+          <div class="show-review-stars">
+            <span class="show-review-stars-front" style="width: <%= @review.score + ( 0.2 * @review.score ) %>em">★★★★★</span>
+            <span class="show-review-stars-back">☆☆☆☆☆</span>
+          </div>
+          <span class="show-review-score-num"><%= @review.score %></span>
+        </div>
+        <div class="show-review-text"><%= @review.text %></div>
+      </div>
+    </div>
+
+    <div class="show-review-item">
+      <p class="show-review-item-text">この口コミで使われた商品</p>
+      <%= link_to item_path(@item.id), class: "show-review-item-container" do %>
+        <%= image_tag @item.image.url, class: "show-review-item-img" %>
+        <div class="show-review-item-right">
+          <div class="show-review-item-brand"><%= @item.brand.name %></div>
+          <div class="show-review-item-name"><%= @item.name %></div>
+          <div class="show-review-item-avg">
+            <div class="show-review-item-avg-stars">
+              <span class="show-review-item-avg-stars-front" style="width: <%= @item.avg_score + ( 0.2 * @item.avg_score.floor ) %>em">★★★★★</span>
+              <span class="show-review-item-avg-stars-back">☆☆☆☆☆</span>
+            </div>
+            <%= @item.avg_score %> (<%= @item.reviews.count %>件)
+          </div>
+          <div class="show-review-item-price"><%= @item.capacity %><%= @item.unit.name %> / <%= @item.price %>円</div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

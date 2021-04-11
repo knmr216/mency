@@ -1,13 +1,23 @@
 <ul class="reviews">
   <% reviews.each do |review| %>
     <li class="review">
-      <%= link_to root_path, class: "review-container" do %>
+      <%= link_to "/items/#{review.item.id}/reviews/#{review.id}", class: "review-container" do %>
         <% if review.image.present? %>
           <%= image_tag review.image.url, class: "review-img" %>
         <% else %>
-          <div class="review-img"></div>
+          <div class="review-no-img">no image.</div>
         <% end %>
         <div class="review-right">
+          <div class="review-user">
+            <% if review.user.image.blank? %>
+              <%= image_tag "default_user_image.png", class: "review-user-img" %>
+            <% else %>
+              <%= image_tag review.user.image.url, class: "review-user-img" %>
+            <% end %>
+            <div class="review-user-nickname">
+              <%= review.user.nickname %>
+            </div>
+          </div>
           <div class="review-score">
             <div class="review-stars">
               <span class="review-stars-front" style="width: <%= review.score + ( 0.2 * review.score ) %>em">★★★★★</span>
@@ -16,7 +26,6 @@
             <%= review.score %>
           </div>
           <div class="review-text"><%= review.text %></div>
-          <div class="review-user-nickname"><%= review.user.nickname %></div>
         </div>
       <% end %>
     </li>

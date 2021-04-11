@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :move_to_index, only: :new
 
   def new
+    binding.pry
     @item = Item.find(params[:item_id])
     @review = Review.new
   end
@@ -14,6 +15,12 @@ class ReviewsController < ApplicationController
       @item = Item.find(params[:item_id])
       render :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:item_id])
+    @review = Review.find(params[:id])
+    @user = @review.user
   end
 
   private

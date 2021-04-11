@@ -16,14 +16,27 @@
   width: 120px;
   height: 120px;
   object-fit: cover;
-  background: #ddd;
   border-radius: 4px;
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.review-no-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  color: #fff;
+  background: #ddd;
+  text-align: center;
+  line-height: 120px;
+  margin-right: 10px;
 }
 
 .review-right {
-  position: relative;
-  width: calc(100% - 125px);
+  width: calc(100% - 130px);
+}
+
+.review-score {
+  margin-bottom: 5px;
 }
 
 .review-stars {
@@ -46,13 +59,25 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+}
+
+.review-user {
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.review-user-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .review-user-nickname {
-  position: absolute;
-  bottom: 0;
-  font-size: 13px;
-  color: #777;
-  white-space: nowrap;
+  line-height: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333;
 }
